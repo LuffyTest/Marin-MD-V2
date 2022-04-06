@@ -711,8 +711,7 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome To The Group 🌈').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye Bye 👋'))
-                            let wel = await new knights.Welcome()
-                                .setUsername(this.getName(user))
+                            let setUsername(this.getName(user))
                                 .setGuildName(this.getName(jid))
                                 .setGuildIcon(ppgc)
                                 .setMemberCount(groupMetadata.participants.length)
@@ -720,8 +719,7 @@ module.exports = {
                                 .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
                                 .toAttachment()
 
-                            let lea = await new knights.Goodbye()
-                                .setUsername(this.getName(user))
+                            let setUsername(this.getName(user))
                                 .setGuildName(this.getName(jid))
                                 .setGuildIcon(ppgc)
                                 .setMemberCount(groupMetadata.participants.length)
