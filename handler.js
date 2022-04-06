@@ -708,8 +708,8 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome To The Group 🌈').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye Bye 👋'))
-                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', null)
-                                }
+                            this.sendButtonLoc(id, await (await fetch(pp)).buffer(), text, '', "♥w♥", "huuu", null)
+                        }
                     }
                 }
                 break
