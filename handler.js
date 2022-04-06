@@ -701,37 +701,15 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                        let pp = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
-                        let ppgc = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
+                        let pp = './src/welcome.jpg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
-                            ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
                         } catch (e) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome To The Group 🌈').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye Bye 👋'))
-                            let setUsername(this.getName(user))
-                                .setGuildName(this.getName(jid))
-                                .setGuildIcon(ppgc)
-                                .setMemberCount(groupMetadata.participants.length)
-                                .setAvatar(pp)
-                                .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
-                                .toAttachment()
-
-                            let setUsername(this.getName(user))
-                                .setGuildName(this.getName(jid))
-                                .setGuildIcon(ppgc)
-                                .setMemberCount(groupMetadata.participants.length)
-                                .setAvatar(pp)
-                                .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
-                                .toAttachment()
-
-                            this.sendFile(jid, action === 'add' ? wel.toBuffer() : lea.toBuffer(), 'pp.jpg', text, null, false, {
-                                contextInfo: {
-                                    mentionedJid: [user]
+                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', null)
                                 }
-                            })
-                        }
                     }
                 }
                 break
