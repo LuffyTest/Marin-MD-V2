@@ -747,16 +747,16 @@ To turn off this feature, type
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'This command can only be used by *OWWNER! 1!1!*',
-        owner: 'This command can only be used by *Bot Owner*!',
-        mods: 'This command can only be used by *Moderators *!',
-        premium: 'This command is only for *Premium* members!',
-        group: 'This command can only be used in groups!',
-        private: 'This command can only be used in Private Chat!',
-        admin: 'This command is only for the *Admin* group!',
-        botAdmin: 'Make the bot * Admin * to use this command',
-        unreg: 'Please register to use this feature by typing:\n\n*#register name.age*\n\nExample: *#register Alice.16*',
-        restrict: 'This feature is *disabled*'
+        rowner: '🕊 his command can only be used by *OWWNER! 1!1! 🕊*',
+        owner: '🕊 This command can only be used by *Bot Owner*! 🕊',
+        mods: '🦨 This command can only be used by *Moderators *! 🦨',
+        premium: 'This command is only for *Premium* members! 🌛',
+        group: '⚠️ This command can only be used in groups! ⚠️',
+        private: '⚠️ This command can only be used in Private Chat! ⚠️',
+        admin: '📛 This command is only for the *Admin* group! 📛',
+        botAdmin: '🔰 Make the bot *Admin* to use this command 🔰',
+        unreg: 'Please register to use this feature by typing:\n\n*#register name.age*\n\n🔆 Example: *#register Alice.16* 🔆',
+        restrict: '🚫 This feature is *disabled* 🚫'
     }[type]
     if (msg) return m.reply(msg)
 }
