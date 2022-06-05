@@ -1,11 +1,11 @@
 let handler = async (m, { conn, text, participants }) => {
-if(!text && !m.quoted) throw 'masukkan nomor yang ingin di tambahkan'
+    if (!text && !m.quoted) throw '\`\`\`🔅  Enter the number you want to add 🔅\`\`\`'
 
-let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+    let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 
-await conn.groupParticipantsUpdate(m.chat, [users], 'add').catch(console.log)
+    await conn.groupParticipantsUpdate(m.chat, [users], 'add').catch(console.log)
 }
-handler.help = ['add','+'].map(v => v + ' @user')
+handler.help = ['add', '+'].map(v => v + ' @user')
 handler.tags = ['group']
 handler.command = /^(add|+)$/i
 
